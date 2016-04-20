@@ -1,8 +1,8 @@
 {
   "name": "mediavault-server",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "main": "server.js",
-  "author": "l.pearce",
+  "author": "leon pearce <leonp1991@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
@@ -19,9 +19,8 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-jshint": "^2.0.0",
-    "jasmine-core": "^2.4.1",
+    "gulp-mocha": "^2.2.0",
     "jshint": "^2.9.1",
-    "karma": "^0.13.19",
-    "karma-jasmine": "^0.3.6"
+    "mocha": "^2.4.5"
   }
 }
