@@ -11,4 +11,13 @@ the metadata extracted includes:
  * thumbnails from video files.
  * thumbnails from images.
 
+
+### System dependencies
+
+ * NodeJS + NPM
+ * All package dependencies
+ * GraphicsMagick
+ * ffmpeg
+ 
 more documentation to come...
+
