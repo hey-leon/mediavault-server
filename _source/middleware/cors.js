@@ -8,6 +8,8 @@ export default (req, res, next) => {
   if (req.method === 'OPTIONS') {
     if (whitelist.indexOf(req.get('origin').toLowerCase()) > -1) {
       res.header('Access-Control-Allow-Origin', req.get('origin'))
+    } else {
+      res.header('Access-Control-Allow-Origin', [0])
     }
     res.header('Access-Control-Allow-Headers', 'authorization')
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
