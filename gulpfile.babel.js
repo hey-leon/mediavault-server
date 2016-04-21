@@ -28,7 +28,7 @@ gulp.task('default', () => {
     } else if (event.type === 'added') { gulp.start('build') }
   })
   // automate js tasks
-  gulp.watch('_source/**/*.js', ['javascript', 'tdd'])
+  gulp.watch('_source/**/*.js', ['javascript', 'test'])
 })
 
 /* ci test */
