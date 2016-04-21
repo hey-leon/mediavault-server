@@ -6,7 +6,7 @@ export default (req, cb) => {
   ]
   // check if whitelisted
   if (whitelist.indexOf(req.header('Origin')) !== -1) {
-    cb(null, { origin: true })
+    cb(null, { origin: true, credentials: true })
   } else {
     cb(null, { origin: false })
   }

@@ -18,7 +18,7 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
 /* support cors */
-server.use(cors())
+server.use(cors(whitelist))
 
 /* all request must be authenticated */
 server.use(authentication)
