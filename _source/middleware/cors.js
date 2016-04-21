@@ -1,11 +1,9 @@
 /**
  * Created by Leon on 18/03/2016.
  */
-
- // valid request origins
-let whitelist = ['http://mediavault.xyz', 'http://www.mediavault.xyz']
-
 export default (req, res, next) => {
+  // valid request origins
+  let whitelist = ['http://mediavault.xyz', 'http://www.mediavault.xyz']
   // test request origin
   let origin
   if (whitelist.indexOf(req.get('origin').toLowerCase()) > -1) {

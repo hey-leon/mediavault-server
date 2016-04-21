@@ -13,23 +13,10 @@ gulp.task('javascript', () => {
     .pipe(gulp.dest('_build'))
 })
 
-/* sync build */
-gulp.task('build', () => {
-  gulp.src(['_source/**/*', '!_source/**/*.js']).pipe(gulp.dest('_build'))
-})
-
-/* tdd */
-gulp.task('tdd', () => {
+/* test */
+gulp.task('test', () => {
   return gulp.src('_tests/**/*.js', {read: false})
     .pipe(mocha({ reporter: 'nyan' }))
-})
-
-/* test once */
-gulp.task('test', () => {
-  return gulp.src('test.js')
-    .pipe(mocha())
-    .once('error', () => { process.exit(1) })
-    .once('end', () => { process.exit() })
 })
 
 /* default */
@@ -43,3 +30,14 @@ gulp.task('default', () => {
   // automate js tasks
   gulp.watch('_source/**/*.js', ['javascript', 'tdd'])
 })
+
+/* ci test */
+gulp.task('ci:test', () => {
+  return gulp.src('test.js')
+    .pipe(mocha())
+    .once('error', () => { process.exit(1) })
+    .once('end', () => { process.exit() })
+})
+
+/* ci build */
+gulp.task('ci:build', ['javascript'])
