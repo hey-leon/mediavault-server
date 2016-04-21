@@ -3,9 +3,10 @@ import https from 'https'
 import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
+import cors from 'cors'
 
+import whitelist from './middleware/whitelist'
 import authentication from './middleware/authentication'
-import cors from './middleware/cors'
 import restful from './routes/restful'
 import account from './routes/account'
 import endpoints from './endpoints'
@@ -17,7 +18,7 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
 /* support cors */
-server.use(cors)
+server.use(cors(whitelist))
 
 /* all request must be authenticated */
 server.use(authentication)
